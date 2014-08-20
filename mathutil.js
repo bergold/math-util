@@ -11,9 +11,9 @@
   /**
    * usefull regex
    */
-  _.REGEX_NUMBER   = /(?:\d*\.)?\d+(?:e(?:\+|-)?\d+)?/g;
-  _.REGEX_TERM     = /^[^=]+$/g;
-  _.REGEX_FUNCTION = /^([a-z]+)\(([A-Za-z]+)\)\s*=\s*(.+)$/g;
+  _.REGEX_NUMBER   = '(?:\d*\.)?\d+(?:e(?:\+|-)?\d+)?';
+  _.REGEX_TERM     = '[^=]+$';
+  _.REGEX_FUNCTION = '([a-z]+)\(([A-Za-z]+)\)\s*=\s*(.+)$';
   
   
   /**
@@ -43,7 +43,7 @@
    * check type of tokens
    */
   _.isNumber = function (a) {
-      return !isNaN(parseFloat(a)) && isFinite(a);
+      return new RegExp('^' + _.REGEX_NUMBER + '$', 'g').test(a.toString());
   };
   _.isConstant = function (a) {
       return a in _.constants;
@@ -71,6 +71,7 @@
       precedence: 1,
       operands: 2,
       apply: function (a, b) {
+        b = b || 0;
         return a + b;
       }
     },
