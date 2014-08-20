@@ -146,7 +146,32 @@
   /**
    * map of constants
    */
-  _.constants = {};
+  _.constants = {
+    "PI": {
+      description: "__MSG_const_pi_desc__",
+      val: function() {
+        return Math.PI;
+      }
+    },
+    "E": {
+      description: "__MSG_const_e_desc__",
+      val: function() {
+        return Math.E;
+      }
+    },
+    "PHI": {
+      description: "__MSG_const_phi_desc__",
+      val: function() {
+        return (1 + Math.sqrt(5)) / 2;
+      }
+    },
+    "RANDOM": {
+      description: "__MSG_const_random_desc__",
+      val: function() {
+        return Math.random();
+      }
+    }
+  };
   
   
   /**

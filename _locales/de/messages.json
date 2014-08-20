@@ -1,0 +1,18 @@
+{
+  "const_pi_desc": {
+    "message": "Kreiszahl",
+    "description": ""
+  },
+  "const_e_desc": {
+    "message": "Eulersche Zahl",
+    "description": ""
+  },
+  "const_phi_desc": {
+    "message": "Goldener Schnitt",
+    "description": ""
+  },
+  "const_random_desc": {
+    "message": "Eine pseudo-zufvllige Zahl zwischen 0 und 1",
+    "description": ""
+  }
+}
