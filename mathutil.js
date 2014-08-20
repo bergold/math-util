@@ -11,9 +11,9 @@
   /**
    * usefull regex
    */
-  _.REGEX_NUMBER   = /^[]$/;
-  _.REGEX_TERM     = /^[]$/;
-  _.REGEX_FUNCTION = /^[]$/;
+  _.REGEX_NUMBER   = /(?:\d*\.)?\d+(?:e(?:\+|-)?\d+)?/g;
+  _.REGEX_TERM     = /^[^=]+$/g;
+  _.REGEX_FUNCTION = /^([a-z]+)\(([A-Za-z]+)\)\s*=\s*(.+)$/g;
   
   
   /**
@@ -57,15 +57,83 @@
   
   
   /**
-   * map of specialchars
+   * map of controlchars
    */
-  _.specialchars = {};
+  _.controlchars = { '(': 1, ',': 1, ')': 1, ';': 1 };
   
   
   /**
    * map of operators
    */
-  _.operators = {};
+  _.operators = {
+    "+": {
+      assoc: "left",
+      precedence: 1,
+      operands: 2,
+      apply: function (a, b) {
+        return a + b;
+      }
+    },
+    "-": {
+      assoc: "left",
+      precedence: 1,
+      operands: 2,
+      apply: function (a, b) {
+        return b ? (a - b) : -a;
+      }
+    },
+
+    "*": {
+      assoc: "left",
+      precedence: 2,
+      operands: 2,
+      apply: function (a, b) {
+        return a * b;
+      }
+    },
+    "/": {
+      assoc: "left",
+      precedence: 2,
+      operands: 2,
+      apply: function (a, b) {
+        return a / b;
+      }
+    },
+    "mod": {
+      assoc: "left",
+      precedence: 2,
+      operands: 2,
+      apply: function (a, b) {
+        return a % b;
+      }
+    },
+
+    "^": {
+      assoc: "right",
+      precedence: 3,
+      operands: 2,
+      apply: function (a, b) {
+        return Math.pow(a, b);
+      }
+    },
+  
+    "%": {
+      assoc: "right",
+      precedence: 4,
+      operands: 1,
+      apply: function (a) {
+        return a/100;
+      }
+    },
+    "!": {
+      assoc: "right",
+      precedence: 4,
+      operands: 1,
+      apply: function (a) {
+        return _.functions['factorial'].eval.call(this, a);
+      }
+    }
+  };
   
   
   /**
@@ -83,8 +151,18 @@
   /**
    * class Mode
    */
-  _.Mode = function() {};
+  _.Mode = function() {
+    this.rules = [];
+  };
   (function() {
+    
+    this.addRule = function(type, regex) {
+      this.rules.push({ type: type, regex: regex });
+    };
+    
+    this.getRegex = function() {
+      
+    };
     
   }).call(_.Mode.prototype);
   
