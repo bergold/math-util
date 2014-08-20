@@ -171,10 +171,21 @@
   /**
    * class Token
    */
-  _.Token = function() {};
+  _.Token = function(type, value) {
+    this.type = type;
+    this.value = value;
+  };
   (function() {
     
   }).call(_.Mode.prototype);
+  _.Token.TYPE_NUMBER   = 'number';
+  _.Token.TYPE_CONSTANT = 'constant';
+  _.Token.TYPE_VARIABLE = 'variable';
+  _.Token.TYPE_FUNCTION = 'function';
+  _.Token.TYPE_CONTROL  = 'control';
+  _.Token.TYPE_OPERATOR = 'operator';
+  _.Token.TYPE_SPACE    = 'space';
+  _.Token.TYPE_UNKNOWN  = 'unknown';
   
   
   /**
