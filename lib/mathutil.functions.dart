@@ -1,18 +1,20 @@
 library mathutil.functions;
 
+import 'dart:core' as core;
+
 /// This class represents a mathematical function.
 class Function {
-  final int arguments;
+  final core.int arguments;
   var _fn;
   
   Function(this.arguments, this._fn);
   
-  num apply(a) {
-    return _fn(a);
+  core.num apply(core.List a) {
+    return core.Function.apply(_fn, a);
   }
 }
 
 /// A map of mathematical functions.
-Map<String, Function> functions = {
+core.Map<core.String, Function> functions = {
   "sin": new Function(1, (a) => a)
 };
