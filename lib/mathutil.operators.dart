@@ -1,4 +1,4 @@
-library mathutil.operators.dart;
+library mathutil.operators;
 
 import 'dart:math' as math;
 
