@@ -1,8 +1,6 @@
 library mathutil.operators.dart;
 
-/**
- * This class represents a mathematical operator.
- */
+/// This class represents a mathematical operator.
 class Operator {
   final String assoc;
   final int precedence;
@@ -22,9 +20,7 @@ class Operator {
 }
 
 
-/**
- * A map of mathematical operators.
- */
+/// A map of mathematical operators.
 Map<String, Operator> operators = {
   "+": new Operator("left", 1, 2, (a, b) => a + b)
 };

@@ -1,8 +1,6 @@
 library mathutil.functions;
 
-/**
- * This class represents a mathematical function.
- */
+/// This class represents a mathematical function.
 class Function {
   final int arguments;
   var _fn;
@@ -14,10 +12,7 @@ class Function {
   }
 }
 
-
-/**
- * A map of mathematical functions.
- */
+/// A map of mathematical functions.
 Map<String, Function> functions = {
   "sin": new Function(1, (a) => a)
 };
