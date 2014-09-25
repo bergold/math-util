@@ -1,3 +1,5 @@
 name: mathutil
 version: 0.1.0
 description: A collection of mathematical helpers to use with the mathengine and mathmirror package.
+dev_dependencies:
+  unittest: any
