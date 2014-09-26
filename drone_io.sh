@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export PS4='\[\e[34m\]\$\$ '
+export PS4='\[\e[34m\]\$ \[\e[m\]'
 set -o xtrace
 set -e 
 
