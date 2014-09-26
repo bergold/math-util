@@ -1,6 +1,7 @@
 library mathutil.functions;
 
 import 'dart:core' as core;
+import 'dart:math';
 
 /// This class represents a mathematical function.
 class Function {
@@ -16,5 +17,7 @@ class Function {
 
 /// A map of mathematical functions.
 core.Map<core.String, Function> functions = {
-  "sin": new Function(1, (a) => a)
+  "sin": new Function(1, (a) => sin(a)),
+  "cos": new Function(1, (a) => cos(a)),
+  "tan": new Function(1, (a) => tan(a))
 };
