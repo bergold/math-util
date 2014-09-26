@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export PS4='$$ '
+export PS4='\$\$ '
 set -o xtrace
 set -e 
 
