@@ -37,5 +37,5 @@ List<Operator> operators = [
   new Operator("^", "right", 4, 2, (a, b) => math.pow(a, b)),
     
   new Operator("%", "right", 5, 1, (a) => a / 100),
-  new Operator("!", "right", 5, 1, (a) => a) // [Todo] Implement factorial operator.
+  new Operator("!", "right", 5, 1, (a) => a)
 ];
