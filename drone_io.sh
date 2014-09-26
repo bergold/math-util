@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export PS4='\e[34m+ '
 set -o xtrace
 set -e 
 
