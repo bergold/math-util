@@ -5,7 +5,7 @@ import 'dart:math' show PI;
 import 'package:unittest/unittest.dart';
 import 'package:mathutil/mathutil.dart';
 
-void run() {
+void main() {
   group("Angleunits", () {
     test("degtorad", () {
       expect(degtorad(180), equals(PI));

@@ -8,6 +8,6 @@ void main() {
   
   useCompactVMConfiguration();
   
-  angleunits.run();
+  angleunits.main();
   
 }
